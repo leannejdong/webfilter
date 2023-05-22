@@ -1,4 +1,4 @@
-# Love low latency
+# Questions network latency
 
 1. Delete oldest log file in a directory, while maintaining a maximum of 3 log files.  (see `log.c`)
 
@@ -49,7 +49,6 @@ pthread_mutex_t config_mutex = PTHREAD_MUTEX_INITIALIZER;
 3. define the updateConfig and useConfig functions. These will use the pthreads mutex functions to ensure safe access to the shared config
 
 ```cpp
-
 void updateConfig() {
     pthread_mutex_lock(&config_mutex);
     // Update the config here...
@@ -61,9 +60,4 @@ void useConfig() {
     // Use the config here...
     pthread_mutex_unlock(&config_mutex);
 }
-
-4.  define the main function that creates the threads:
-
-
-
 ```
